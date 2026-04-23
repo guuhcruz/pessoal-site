@@ -14,16 +14,15 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'spa-pessoal-site' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('spa-pessoal-site');
-  });
-
-  it('should render title', () => {
+  it('should render main sections', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, spa-pessoal-site');
+
+    expect(compiled.querySelector('#sobre')).toBeTruthy();
+    expect(compiled.querySelector('#tecnologias')).toBeTruthy();
+    expect(compiled.querySelector('#projetos')).toBeTruthy();
+    expect(compiled.querySelector('#servicos')).toBeTruthy();
+    expect(compiled.querySelector('#contato')).toBeTruthy();
   });
 });
